@@ -82,3 +82,26 @@ In this module, you will learn about:
 
 - Identifying the entities from your use cases.
 - Creating nodes in the graph in support of the data model.
+
+### Defining Labels
+Entities are the dominant nouns in your application use cases:
+
+1. What ingredients are used in a recipe?
+2. Who is married to this person?
+
+The entities of your use cases will be the labeled nodes in the graph data model.
+
+### Node properties
+Node properties are used to:
+
+- Uniquely identify a node.
+- Answer specific details of the use cases for the application.
+- Return data.
+
+### Unique identifiers in the Movie graph
+In the Movie graph, we use the following properties to uniquely identify our nodes:
+
+- Person.tmdbId
+- Movie.tmdbId
+
+## Modeling Relationships
