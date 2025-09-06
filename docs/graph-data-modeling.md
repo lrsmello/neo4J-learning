@@ -105,3 +105,63 @@ In the Movie graph, we use the following properties to uniquely identify our nod
 - Movie.tmdbId
 
 ## Modeling Relationships
+The Neo4j components that are used to define the graph data model are:
+
+- Nodes
+- Labels
+- Relationships
+- Properties
+
+### Data Modeling Process
+In this module, we will learn about:
+- Identifying the relationships from use cases.
+- Creating relationships in the graph to support the data model.
+
+Connections are the verbs in your use cases:
+- What ingredients are used in a recipe?
+- Who is married to this person?
+
+### Relationship direction
+When you create a relationship in Neo4j, a direction must either be specified explicitly or inferred by the left-to-right direction in the pattern specified. At runtime, during a query, direction is typically not required.
+
+A relationship is typically between 2 different nodes, but it can also be to the same node.
+
+### Fanout
+
+<p align="center">
+    <img src="docs/img/fanout.png" alt="fanout"/>
+</p>
+
+Here, we have entities (Person, Residence) represented not as a single node, but as a network or linked nodes.
+
+This is an extreme example of fanout, and is almost certainly overkill for any real-life solution, but some amount of fanout can be very useful.
+
+### Properties for relationships
+Properties for a relationship are used to enrich how two nodes are related. When you define a property for a relationship, it is because your use cases ask a specific question about how two nodes are related, not just that they are related.
+
+## Testing the Model
+In this module, we will test that the graph can be used to test the use cases of the model.
+
+### Why Test?
+use the use cases to design the data model that includes labels for nodes, relationship types and direction, and properties for the nodes and relationships.
+
+You have also populated the graph to implement the data model with a small set of test data. To ensure that the graph can satisfy every use case, you must test the use cases against the graph.
+
+## Refactoring the Graph
+In this module, we will learn about:
+- Why we refactor a graph data model and graph.
+- Adding labels to the data model.
+
+### Why refactor?
+Refactoring is the process of changing the data model and the graph.
+
+There are three reasons why you would refactor:
+- The graph as modeled does not answer all of the use cases.
+- A new use case has come up that you must account for in your data model.
+- The Cypher for the use cases does not perform optimally, especially when the graph scales
+
+### Steps for refactoring
+To refactor a graph data model and a graph, you must:
+1. Design the new data model.
+2. Write Cypher code to transform the existing graph to implement the new data model.
+3. Retest all use cases, possibly with updated Cypher code.
